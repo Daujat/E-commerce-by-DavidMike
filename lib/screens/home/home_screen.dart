@@ -19,10 +19,19 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () => context.go('/login'),
-              child: Text('Login'),
-            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () => context.go('/login'),
+                  child: Text('Login'),
+                ),
+                ElevatedButton(
+                  onPressed: () => context.go('/register'),
+                  child: Text('Register'),
+                ),
+              ],
+            )
           ],
         ),
       ),

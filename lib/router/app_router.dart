@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/auth/login_screen.dart';
+import 'package:ecommerce_app/screens/auth/register_screen.dart';
 import 'package:ecommerce_app/screens/home/home_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,6 +13,11 @@ final GoRouter appRouter = GoRouter(
         path: '/login',
         builder: (context, state) {
           return const LoginScreen();
+        }),
+    GoRoute(
+        path: '/register',
+        builder: (context, state) {
+          return const RegisterScreen();
         }),
   ],
 );

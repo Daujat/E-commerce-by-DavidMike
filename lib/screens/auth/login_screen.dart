@@ -1,8 +1,8 @@
+import 'package:ecommerce_app/components/text_field.dart';
 import 'package:ecommerce_app/core/app_colors.dart';
 import 'package:ecommerce_app/core/text_styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
-//import 'package:ecommerce_app/core/text_styles.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -24,7 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
           icon: Icon(Icons.arrow_back, color: AppColors.white),
           onPressed: () => context.push('/'),
         ),
-        //title: Text('Login'.toUpperCase(), style: TextStyles.titleStyle),
         centerTitle: true,
       ),
       body: Padding(
@@ -47,25 +46,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
               spacing: 20,
               children: [
-                TextField(
-                  decoration: InputDecoration(
-                    filled: true,
+                TextFieldComponent(
+                    isPassword: false,
                     labelText: 'Correo electrónico',
                     hintText: 'Ingresa tu correo electrónico',
-                    fillColor: AppColors.white,
-                    prefixIcon: Icon(Icons.email, color: AppColors.primary),
-                  ),
-                ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    filled: true,
+                    icon: Icons.email),
+                TextFieldComponent(
+                    isPassword: true,
                     labelText: 'Contraseña',
-                    fillColor: AppColors.white,
                     hintText: 'Ingresa tu contraseña',
-                    prefixIcon: Icon(Icons.lock, color: AppColors.primary),
-                  ),
-                ),
+                    icon: Icons.lock),
                 Row(
                   spacing: 5,
                   children: [
@@ -110,4 +100,18 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  // TextField textField(
+  //     bool obscureText, String labelText, String hintText, IconData icon) {
+  //   return TextField(
+  //     obscureText: obscureText,
+  //     decoration: InputDecoration(
+  //       filled: true,
+  //       labelText: labelText,
+  //       fillColor: AppColors.white,
+  //       hintText: hintText,
+  //       prefixIcon: Icon(icon, color: AppColors.primary),
+  //     ),
+  //   );
+  // }
 }
